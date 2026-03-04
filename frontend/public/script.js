@@ -1010,11 +1010,39 @@ function renderSpa() {
   observeReveal();
 }
 
+function bookPackage(name, nights, price, event) {
+  event.stopPropagation();
+
+  // Precompila note con il nome del pacchetto
+  const notesEl = document.getElementById('f-notes');
+  if (notesEl) notesEl.value = 'Pacchetto: ' + name + ' (' + nights + ' notti · €' + price.toLocaleString() + ')';
+
+  // Preseleziona formula pensione in base al pacchetto
+  const planEl = document.getElementById('f-plan');
+  if (planEl) {
+    if (name.toLowerCase().includes('luna di miele') || name.toLowerCase().includes('sky')) {
+      planEl.value = planEl.options[3] ? planEl.options[3].value : planEl.options[planEl.options.length - 1].value;
+      for (let i = 0; i < planEl.options.length; i++) {
+        if (planEl.options[i].text.includes('All Inclusive')) { planEl.selectedIndex = i; break; }
+      }
+    } else {
+      for (let i = 0; i < planEl.options.length; i++) {
+        if (planEl.options[i].text.includes('Pensione Completa')) { planEl.selectedIndex = i; break; }
+      }
+    }
+  }
+
+  // Scroll al form prenotazione
+  document.getElementById('contact').scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+  showToast('Pacchetto selezionato ✦', name + ' · ' + nights + ' notti. Completa la prenotazione nel form!');
+}
+
 function renderPackages() {
   document.getElementById("packagesGrid").innerHTML = DATA.packages
     .map(
       (p) => `
-    <div class="pkg-card" onclick="showToast('${p.name}','Contattaci per personalizzare questo pacchetto per il vostro soggiorno!')">
+    <div class="pkg-card">
       <div class="pkg-top">
         <div class="pkg-for">✦ ${p.for}</div>
         <div class="pkg-name">${p.name}</div>
@@ -1024,7 +1052,7 @@ function renderPackages() {
         <div class="pkg-desc">${p.desc}</div>
         <div class="pkg-footer">
           <div class="pkg-price">€${p.price.toLocaleString()}<span>totale pacchetto</span></div>
-          <button class="btn-sm">Prenota</button>
+          <button class="btn-sm" onclick="bookPackage('${p.name}', ${p.nights}, ${p.price}, event)">Prenota</button>
         </div>
       </div>
     </div>
