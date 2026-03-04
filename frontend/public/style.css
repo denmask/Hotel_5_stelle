@@ -290,15 +290,17 @@ nav.scrolled {
   }
 }
 .hero-tag {
-  font-size: 0.72rem;
+  font-size: 0.78rem;
   letter-spacing: 6px;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--gold-light);
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 16px;
   margin-bottom: 24px;
+  text-shadow: 0 1px 10px rgba(0,0,0,.9);
+  font-weight: 600;
 }
 .hero-tag::before,
 .hero-tag::after {
@@ -968,8 +970,9 @@ section {
   bottom: 0;
   background: linear-gradient(
     to top,
-    rgba(13, 17, 23, 0.9) 0%,
-    transparent 60%
+    rgba(13, 17, 23, 0.97) 0%,
+    rgba(13, 17, 23, 0.4) 50%,
+    transparent 100%
   );
   display: flex;
   align-items: flex-end;
@@ -979,14 +982,18 @@ section {
   font-family: var(--f-display);
   font-size: 1.6rem;
   color: var(--white);
+  text-shadow: 0 2px 12px rgba(0,0,0,.9), 0 0 40px rgba(0,0,0,.8);
+  font-weight: 600;
 }
 .rest-cuisine {
-  font-size: 0.72rem;
+  font-size: 0.78rem;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--gold-light);
   display: block;
   margin-bottom: 4px;
+  text-shadow: 0 1px 8px rgba(0,0,0,1), 0 0 20px rgba(0,0,0,1);
+  font-weight: 600;
 }
 .rest-info {
   padding: 24px 0;
@@ -1475,8 +1482,11 @@ section {
 }
 .map-text {
   font-family: var(--f-display);
-  font-size: 1.2rem;
-  color: var(--gold);
+  font-size: 1.4rem;
+  color: var(--white);
+  text-shadow: 0 2px 16px rgba(0,0,0,1), 0 0 40px rgba(0,0,0,.9);
+  font-weight: 600;
+  letter-spacing: 2px;
 }
 #contact {
   background: var(--dark);
