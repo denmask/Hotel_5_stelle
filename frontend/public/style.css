@@ -717,16 +717,20 @@ section {
 }
 .btn-sm {
   padding: 9px 20px;
-  border: 1px solid var(--gold);
-  color: var(--gold);
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  color: var(--white);
+  background: none;
   font-size: 0.7rem;
   letter-spacing: 2px;
   text-transform: uppercase;
   transition: 0.3s;
+  font-family: var(--f-body);
+  cursor: pointer;
 }
 .btn-sm:hover {
-  background: var(--gold);
+  background: var(--white);
   color: var(--deep);
+  border-color: var(--white);
 }
 .modal-overlay {
   position: fixed;
@@ -1122,8 +1126,14 @@ section {
   cursor: pointer;
 }
 .plan-card.featured {
-  border-color: var(--gold);
+  border-color: rgba(201, 168, 76, 0.35);
   background: rgba(201, 168, 76, 0.04);
+  transform: translateY(-4px);
+}
+.plan-card.featured:hover {
+  border-color: var(--gold);
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0,0,0,.4);
 }
 .plan-card:hover {
   border-color: var(--gold);
