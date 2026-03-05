@@ -4,17 +4,26 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Royal River Luxury Hotel ★★★★★ – Tenerife, Costa Adeje</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+<meta name="description" content="L'unico hotel adults-only al mondo con 50 ville private ciascuna dotata di piscina privata. Costa Adeje, Tenerife.">
+<meta property="og:title" content="Royal River Luxury Hotel ★★★★★">
+<meta property="og:description" content="L'unico hotel adults-only al mondo con 50 ville private. Costa Adeje, Tenerife.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1200&q=80">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&family=Playfair+Display:wght@700;800&family=Bebas+Neue&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+<div id="cursor"></div>
+<div id="cursor-dot"></div>
+
 <div id="loader">
   <div class="loader-logo">ROYAL RIVER</div>
+  <div class="loader-subtitle">Luxury Hotel · Costa Adeje · Tenerife</div>
   <div class="loader-bar"><div class="loader-fill"></div></div>
 </div>
 
 <div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-bg"></div>
   <span class="close-menu" onclick="toggleMenu()">✕</span>
   <a href="#about" onclick="toggleMenu()">Hotel</a>
   <a href="#rooms" onclick="toggleMenu()">Ville</a>
@@ -23,6 +32,10 @@
   <a href="#spa" onclick="toggleMenu()">Spa</a>
   <a href="#packages" onclick="toggleMenu()">Pacchetti</a>
   <a href="#contact" onclick="toggleMenu()">Prenota</a>
+  <div class="mobile-menu-contact">
+    <span>+34 922 788 482</span>
+    <span>info@royalriver.es</span>
+  </div>
 </div>
 
 <nav id="navbar">
@@ -56,6 +69,10 @@
       <a href="#rooms" class="btn-primary">Scopri le Ville</a>
       <a href="#contact" class="btn-outline">Prenota il Tuo Soggiorno</a>
     </div>
+  </div>
+  <div class="hero-scroll">
+    <span>Scorri</span>
+    <div class="scroll-line"></div>
   </div>
 </section>
 
@@ -108,21 +125,67 @@
         <p class="section-text" style="margin-top:12px">Un rifugio romantico perfetto per coppie che cercano il massimo del lusso, gastronomia stellata e la magia di Tenerife.</p>
         <div class="about-stats">
           <div class="stat">
-            <div class="stat-num">50</div>
+            <div class="stat-num" data-count="50">0</div>
             <div class="stat-desc">Ville Private</div>
           </div>
           <div class="stat">
-            <div class="stat-num">4</div>
+            <div class="stat-num" data-count="4">0</div>
             <div class="stat-desc">Ristoranti Gourmet</div>
           </div>
           <div class="stat">
-            <div class="stat-num">18°C</div>
+            <div class="stat-num stat-text">18°C</div>
             <div class="stat-desc">Temperatura Media</div>
           </div>
           <div class="stat">
-            <div class="stat-num">Adults</div>
-            <div class="stat-desc">Only +14 anni</div>
+            <div class="stat-num stat-text">+14</div>
+            <div class="stat-desc">Adults Only</div>
           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="awards">
+  <div class="container">
+    <div class="awards-bar reveal">
+      <div class="award-item">
+        <div class="award-icon">🏆</div>
+        <div class="award-text">
+          <strong>Condé Nast Traveller</strong>
+          <span>Gold List 2024</span>
+        </div>
+      </div>
+      <div class="award-divider"></div>
+      <div class="award-item">
+        <div class="award-icon">⭐</div>
+        <div class="award-text">
+          <strong>TripAdvisor</strong>
+          <span>Travellers' Choice 2024</span>
+        </div>
+      </div>
+      <div class="award-divider"></div>
+      <div class="award-item">
+        <div class="award-icon">🌿</div>
+        <div class="award-text">
+          <strong>Leading Hotels</strong>
+          <span>of the World Member</span>
+        </div>
+      </div>
+      <div class="award-divider"></div>
+      <div class="award-item">
+        <div class="award-icon">💎</div>
+        <div class="award-text">
+          <strong>Forbes Travel Guide</strong>
+          <span>Five Star 2024</span>
+        </div>
+      </div>
+      <div class="award-divider"></div>
+      <div class="award-item">
+        <div class="award-icon">🌊</div>
+        <div class="award-text">
+          <strong>World Luxury Hotel</strong>
+          <span>Award Winner</span>
         </div>
       </div>
     </div>
@@ -164,7 +227,7 @@
           <p style="font-family:var(--f-display);font-size:2rem;color:var(--gold)" id="modalPrice"></p>
           <p style="font-size:.82rem;color:var(--muted)">per notte · colazione inclusa</p>
         </div>
-        <a href="#contact" onclick="closeModalDirect()" class="btn-primary">Prenota Ora</a>
+        <a href="#contact" onclick="closeModalDirect()" class="btn-primary">Prenota Ora →</a>
       </div>
     </div>
   </div>
@@ -213,7 +276,7 @@
         <h2 class="section-title">Un santuario<br><em>per il benessere</em></h2>
         <p class="section-text">Il tuo viaggio inizia con un rilassante bagno di piedi alla lavanda, una maschera calda per gli occhi e un delicato massaggio alla testa — per sciogliere dolcemente le tensioni prima della tua esperienza scelta.</p>
         <p class="section-text" style="margin-top:12px">Sauna finlandese, bagno turco, vasca di crioterapia, docce emozionali e trattamenti esclusivi con prodotti locali delle Canarie.</p>
-        <a href="#contact" class="btn-primary" style="display:inline-block;margin-top:28px">Prenota un Trattamento</a>
+        <a href="#contact" class="btn-primary" style="display:inline-block;margin-top:28px">Prenota un Trattamento →</a>
       </div>
     </div>
     <div class="spa-treatments" id="spaTreatments"></div>
@@ -244,35 +307,45 @@
     <div class="location-grid">
       <div class="location-info reveal-left">
         <div class="location-item">
-          <div class="location-icon">📍</div>
+          <div class="location-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+          </div>
           <div class="location-item-text">
             <strong>Indirizzo</strong>
             <p>Avenida de los Océanos, s/n<br>Costa Adeje Golf Course<br>38686 Adeje, Tenerife, Spagna</p>
           </div>
         </div>
         <div class="location-item">
-          <div class="location-icon">✈️</div>
+          <div class="location-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 16v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"/><path d="M12 4v8m-3-3 3 3 3-3"/><rect x="3" y="16" width="18" height="4" rx="1"/></svg>
+          </div>
           <div class="location-item-text">
             <strong>Aeroporto</strong>
             <p>Tenerife Sud (TFS) — 25 minuti in auto<br>Transfer privato disponibile su prenotazione</p>
           </div>
         </div>
         <div class="location-item">
-          <div class="location-icon">🏖️</div>
+          <div class="location-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 12h20M2 12c0 5.523 4.477 10 10 10S22 17.523 22 12M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10"/><path d="M12 2c-2.5 3-4 6.5-4 10s1.5 7 4 10M12 2c2.5 3 4 6.5 4 10s-1.5 7-4 10"/></svg>
+          </div>
           <div class="location-item-text">
             <strong>Spiagge Vicine</strong>
             <p>Playa del Duque — 8 min a piedi<br>Playa de las Américas — 12 min in auto<br>Los Gigantes — 20 min in auto</p>
           </div>
         </div>
         <div class="location-item">
-          <div class="location-icon">📞</div>
+          <div class="location-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.06 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.03z"/></svg>
+          </div>
           <div class="location-item-text">
             <strong>Contatti</strong>
-            <p>Tel: +34 922 788 482<br>Email: <a href="/cdn-cgi/l/email-protection#c8a1a6aea788baa7b1a9a4baa1beadbae6adbb"><span class="__cf_email__" data-cfemail="8ae3e4ece5caf8e5f3ebe6f8e3fceff8a4eff9">[email&#160;protected]</span></a></p>
+            <p>Tel: +34 922 788 482<br>Email: info@royalriver.es</p>
           </div>
         </div>
         <div class="location-item">
-          <div class="location-icon">🚗</div>
+          <div class="location-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+          </div>
           <div class="location-item-text">
             <strong>Parcheggio</strong>
             <p>Parcheggio privato gratuito e sorvegliato<br>Valet parking disponibile h24</p>
@@ -372,7 +445,7 @@
           <label>Richieste Speciali</label>
           <textarea id="f-notes" rows="3" placeholder="Anniversario, luna di miele, allergie alimentari, preferenze particolari..."></textarea>
         </div>
-        <button class="btn-primary" style="width:100%;padding:16px" onclick="submitBooking()">Invia Richiesta di Prenotazione ✦</button>
+        <button class="btn-primary btn-full" onclick="submitBooking()">Invia Richiesta di Prenotazione ✦</button>
         <div class="success-msg" id="successMsg">
           ✦ Prenotazione registrata con successo! Scorri in basso per visualizzarla e gestirla. Il nostro concierge vi contatterà entro 2 ore.
         </div>
@@ -406,10 +479,18 @@
         </div>
         <p style="margin-top:16px">L'unico hotel adults-only al mondo con 50 ville private ciascuna dotata di piscina. Costa Adeje, Tenerife.</p>
         <div class="footer-social">
-          <a href="#" title="Instagram">📷</a>
-          <a href="#" title="Facebook">📘</a>
-          <a href="#" title="Twitter">🐦</a>
-          <a href="#" title="YouTube">▶️</a>
+          <a href="#" title="Instagram" aria-label="Instagram">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="#" title="Facebook" aria-label="Facebook">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="#" title="YouTube" aria-label="YouTube">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-1.96C18.88 4 12 4 12 4s-6.88 0-8.6.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.4 19.54C5.12 20 12 20 12 20s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg>
+          </a>
+          <a href="#" title="LinkedIn" aria-label="LinkedIn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
         </div>
       </div>
       <div class="footer-col">
@@ -436,7 +517,7 @@
         <h4>Contatti</h4>
         <ul>
           <li><a href="tel:+34922788482">+34 922 788 482</a></li>
-          <li><a href="/cdn-cgi/l/email-protection#5831363e37182a372139342a312e3d2a763d2b"><span class="__cf_email__" data-cfemail="bbd2d5ddd4fbc9d4c2dad7c9d2cddec995dec8">[email&#160;protected]</span></a></li>
+          <li><a href="mailto:info@royalriver.es">info@royalriver.es</a></li>
           <li><a href="https://royalriver.es" target="_blank">royalriver.es</a></li>
         </ul>
       </div>
@@ -444,7 +525,14 @@
     <div class="footer-bottom">
       <p>© 2025 Royal River Luxury Hotel. Tutti i diritti riservati. | <a href="#">Privacy Policy</a> | <a href="#">Cookie Policy</a></p>
     </div>
+  </div>
+</footer>
 
-    <script src="script.js"></script>
+<div id="toast">
+  <div class="toast-title" id="toastTitle"></div>
+  <div id="toastMsg"></div>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
